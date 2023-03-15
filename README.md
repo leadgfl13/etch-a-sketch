@@ -1,1 +1,1 @@
-# etch-a-sketch
+This project will act as another example to showcase my skills working with javascript, html, css, and githubls.   The goal is to create a grid of x,x squares that can be chosen by the user, and then hovered over to fill in to create pictures.  I may add additional features such as color choice and different shades.
