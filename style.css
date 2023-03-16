@@ -1,3 +1,9 @@
 .title{
     color:green;
 }
+
+.main{
+    display:flex;
+    width:10px;
+    flex-direction:column;
+}
