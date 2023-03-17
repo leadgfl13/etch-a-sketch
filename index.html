@@ -5,11 +5,24 @@
 <link rel ="stylesheet" href="style.css">
 </head>
 <body>
-    <div class = "title"> here is the title</div>
-   <ul id = "list">
-   fdsfd
-   </ul>
-            <!-- this is where the grid goes?-->
+    <div class = "title"> 
+        <div class = "left">
+
+
+                <button class = "selection" id = 'butt1'>4x4 grid</button>
+                <button class = "selection" id = 'butt2'>8x8 grid</button>
+                <button class = "selection" id = 'butt3'>16x16 grid</button>
+                 <button class = "selection" id = 'butt4'>32x32 grid</button>
+        </div>
+
+        <div class = "right" id = 'right'>
+            This is where the grid should go?
+        </div>
+         
+    </div>
+
+
+    
 </body>
 
 <script>
@@ -17,12 +30,15 @@
 
 body=document.body
 
-let blank = document.getElementById('list')
+let blank = document.getElementById('right')
 
 blank.addEventListener("mouseenter",()=>{
     blank.setAttribute('style','background-color:black')
 })
-
+ let button1 = document.getElementById('butt1')
+ button1.addEventListener("mouseenter",()=>{
+//need to add a function to make a grid?
+ })
     
 </script>
 

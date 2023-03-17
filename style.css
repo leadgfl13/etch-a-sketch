@@ -1,9 +1,19 @@
 .title{
     color:green;
+    display:flex;
+    justify-items:flex-end;
+    background-color:red;
+
 }
 
-.main{
+
+.left{
     display:flex;
-    width:10px;
     flex-direction:column;
+    flex:1;
+}
+
+.right{
+    display:flex;
+    flex:6;
 }
