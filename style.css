@@ -17,3 +17,9 @@
     display:flex;
     flex:6;
 }
+
+#square{
+    width:10px;
+    height:10px;
+    background-color:blue;
+}

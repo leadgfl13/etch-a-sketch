@@ -30,15 +30,21 @@
 
 body=document.body
 
-let blank = document.getElementById('right')
 
-blank.addEventListener("mouseenter",()=>{
-    blank.setAttribute('style','background-color:black')
-})
- let button1 = document.getElementById('butt1')
- button1.addEventListener("mouseenter",()=>{
-//need to add a function to make a grid?
+ const button1 = document.getElementById('butt1')
+ button1.addEventListener("click",() =>{
+    canvas = document.getElementById('right')
+    
+        for(let i = 0; i<5; i++){
+            let newsquare = document.createElement('div')
+            newsquare.setAttribute('id', 'square')
+            canvas.appendChild(newsquare)
+        }
+        
  })
+ 
+    
+
     
 </script>
 
