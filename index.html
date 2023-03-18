@@ -16,9 +16,34 @@
         </div>
 
         <div class = "right" id = 'right'>
-            This is where the grid should go?
-        </div>
-         
+            <div class = "long"> 
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+            </div>
+            <div class = "long"> 
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+            </div>
+            <div class = "long"> 
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+            </div>
+            <div class = "long"> 
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+                <div class = 'small'></div>
+            </div>
+            
+       </div>
+       
+    </div>
     </div>
 
 
@@ -27,22 +52,45 @@
 
 <script>
 
+   function addInners(){
+    for(let i =0; i<4; i++){
+    outers = document.getElementById('outersquare')
+         let innersquare = document.createElement('div')
+         innersquare.setAttribute('id','innersquare')
+         outers.appendChild(innersquare)
+   }}
 
+   function makeDiv(){
+    canvas = document.getElementById('right')
+    long = document.createElement('div')
+    long.setAttribute('id', 'long')
+    square = document.createElement('div')
+    square.setAttribute('id', 'square')
+    canvas.appendChild(long)
+    for(i=0;i<4;i++){
+        long.appendChild(square)
+    }
+   }
+ 
 body=document.body
 
 
  const button1 = document.getElementById('butt1')
  button1.addEventListener("click",() =>{
-    canvas = document.getElementById('right')
-    
-        for(let i = 0; i<5; i++){
-            let newsquare = document.createElement('div')
-            newsquare.setAttribute('id', 'square')
-            canvas.appendChild(newsquare)
-        }
-        
- })
  
+})
+
+black = document.getElementsByClassName('small')
+
+for(let i =0; i<black.length; i++){
+    black[i].addEventListener("mouseenter",()=>{
+    black[i].setAttribute("style","background-color:black")
+})
+}
+
+ 
+
+    
     
 
     

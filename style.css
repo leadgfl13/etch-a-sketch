@@ -1,8 +1,6 @@
 .title{
     color:green;
     display:flex;
-    justify-items:flex-end;
-    background-color:red;
 
 }
 
@@ -15,11 +13,58 @@
 
 .right{
     display:flex;
+    flex-direction:column;
     flex:6;
+    height:100vh;
 }
 
-#square{
-    width:10px;
-    height:10px;
+#outersquare{
+    display:flex;
+ 
     background-color:blue;
+    border-color:black;
+    border-style:groove;
+    
+    flex:1;
+    
+}
+
+#innersquare{
+    display:flex;
+    border-color:black;
+    border-style:groove;
+    background-color:white;
+    height:10px;
+    width:10px;
+    flex-direction:row;
+
+}
+
+#long{
+    display:flex;
+    flex-direction:row;
+    flex:1;
+}
+#square{
+    border-color:black;
+    display:flex;
+    border-style:groove;
+    
+}
+
+.long{
+    display:flex;
+    flex-direction:row;
+    flex:1;
+    background-color:pink;
+
+}
+
+.small{
+    border-color:black;
+    display:flex;
+    border-style:groove;
+    background-color:purple;
+    flex:1;
+    
 }
