@@ -16,79 +16,150 @@
         </div>
 
         <div class = "right" id = 'right'>
-            <div class = "long"> 
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-            </div>
-            <div class = "long"> 
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-            </div>
-            <div class = "long"> 
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-            </div>
-            <div class = "long"> 
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-                <div class = 'small'></div>
-            </div>
-            
-       </div>
-       
-    </div>
-    </div>
 
+    </div>
 
     
 </body>
 
 <script>
 
-   function addInners(){
-    for(let i =0; i<4; i++){
-    outers = document.getElementById('outersquare')
-         let innersquare = document.createElement('div')
-         innersquare.setAttribute('id','innersquare')
-         outers.appendChild(innersquare)
-   }}
 
-   function makeDiv(){
+//need to make a function at add one line of the boxes
+
+
+
+   function makeOuter4(){
     canvas = document.getElementById('right')
     long = document.createElement('div')
     long.setAttribute('id', 'long')
-    square = document.createElement('div')
-    square.setAttribute('id', 'square')
+    for(i=0; i<4; i++){
     canvas.appendChild(long)
-    for(i=0;i<4;i++){
-        long.appendChild(square)
-    }
-   }
- 
+    }}
+
+   function makeOuter8(){
+    canvas = document.getElementById('right')
+    long = document.createElement('div')
+    long.setAttribute('id', 'long')
+    for(i=0; i<8; i++){
+    canvas.appendChild(long)
+    }}
+   
+    function makeInner4(){
+    outer = document.getElementById('long')
+    for(i =0; i <4; i++){
+    square = document.createElement('div')
+    square.setAttribute('class','square')
+    long.appendChild(square)
+    makeBlack()
+    
+    
+    }}
+
+    function makeInner8(){
+    outer = document.getElementById('long')
+    for(i =0; i <8; i++){
+    square = document.createElement('div')
+    square.setAttribute('class','square')
+    long.appendChild(square)
+    makeBlack()
+    
+    }}
+
+
+
+    function makeOuter16(){
+    canvas = document.getElementById('right')
+    long = document.createElement('div')
+    long.setAttribute('id', 'long')
+    for(i=0; i<16; i++){
+    canvas.appendChild(long)
+    makeBlack()
+    }}
+
+    function makeInner16(){
+    outer = document.getElementById('long')
+    for(i =0; i <16; i++){
+    square = document.createElement('div')
+    square.setAttribute('class','square')
+    long.appendChild(square)
+    makeBlack()
+    
+    }}
+
+    function makeOuter32(){
+    canvas = document.getElementById('right')
+    long = document.createElement('div')
+    long.setAttribute('id', 'long')
+    for(i=0; i<32; i++){
+    canvas.appendChild(long)
+    makeBlack()
+    }}
+
+    function makeInner32(){
+    outer = document.getElementById('long')
+    for(i =0; i <32; i++){
+    square = document.createElement('div')
+    square.setAttribute('class','square')
+    long.appendChild(square)
+    makeBlack()
+    
+    }}
+
+    function makeComposite4(){
+        for(let i=0; i<4; i++){
+            makeOuter4()
+            makeInner4()
+        }
+        }
+    
+    function makeComposite8(){
+        for(let i=0; i<8; i++){
+            makeOuter8()
+            makeInner8()
+        }
+        }
+    
+        function makeComposite16(){
+        for(let i=0; i<8; i++){
+            makeOuter16()
+            makeInner16()
+        }
+        }
+
+        function makeComposite32(){
+        for(let i=0; i<32; i++){
+            makeOuter16()
+            makeInner16()
+        }
+        }
 body=document.body
 
 
  const button1 = document.getElementById('butt1')
- button1.addEventListener("click",() =>{
- 
-})
+ button1.addEventListener("click",makeComposite4)
+    
 
-black = document.getElementsByClassName('small')
+ const button2 = document.getElementById('butt2')
+ button2.addEventListener("click", makeComposite8)
 
+ const button3 = document.getElementById('butt3')
+ button3.addEventListener("click", makeComposite16)
+
+ const button4 = document.getElementById('butt4')
+ button4.addEventListener("click", makeComposite32)
+
+black = document.getElementsByClassName('square')
+
+function makeBlack(){
 for(let i =0; i<black.length; i++){
     black[i].addEventListener("mouseenter",()=>{
-    black[i].setAttribute("style","background-color:black")
-})
+    black[i].style.backgroundColor = "black"
+    })}
+
 }
 
- 
+makeBlack()
 
     
     
