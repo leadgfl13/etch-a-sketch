@@ -1,4 +1,18 @@
-.title{
+
+body{
+    margin:0px;
+}
+.top{
+    display:flexl;
+    background-color:red;
+    font-size:40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-color:gold;
+    border-style:double;
+    text-align:center;
+    margin-top:0px;
+
+}.title{
     color:green;
     display:flex;
 
