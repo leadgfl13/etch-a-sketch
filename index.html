@@ -13,6 +13,7 @@
 
 
                  <button class = "clear" id = "butt5"> Clear</button>
+                 <button class = "clear" id = "input">Make custom size grid</button>
         </div>
 
         <div class = "right" id = 'right'>
@@ -23,6 +24,23 @@
 
 <script>
 
+var randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+clearbutt = document.getElementById('butt5')
+clearbutt.addEventListener('click',makeClear)
+custombutt =document.getElementById("input")
+choice = 0
+custombutt.addEventListener('click', askPrompt)
+custombutt.addEventListener('click', makeCompositeCustom)
+function askPrompt(){
+first = prompt("Please enter a number from 1 to 20", "");
+choice = parseInt(first)
+if(choice === NaN){
+    maeComposite16();
+    return
+}
+
+}
 
 
 
@@ -53,33 +71,61 @@
         }
         }
 
-//FUTURE FUNCTIONS FOR CUSTOM NUMBER
 
-/*function makeOuterCustom(){
+
+
+function makeOuterCustom(){
     canvas = document.getElementById('right')
     long = document.createElement('div')
     long.setAttribute('id','long')
-    for (i =0, i<customNumber; i++){
+    for(i =0; i <choice; i++){
         canvas.appendChild(long)
         makeBlack()
     }}
 
     function makeInnerCustom(){
     outer = document.getElementById('long')
-    for(i =0; i <customNumber; i++){
+    for(i =0; i <choice; i++){
     square = document.createElement('div')
     square.setAttribute('class','square')
     long.appendChild(square)
     makeBlack()
     }}
-*/
+    function makeCompositeCustom(){
+        blank=document.getElementById('right')
+        blank.innerHTML = ''
+        console.log(choice)
+        for(let i =0; i<choice; i++){
+            makeOuterCustom()
+            makeInnerCustom()
+        }
+    }
+    
+        
+    
+    
+    function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+ 
+    }
+
+
 
 black = document.getElementsByClassName('square')
 
 function makeBlack(){
+    
 for(let i =0; i<black.length; i++){
+
     black[i].addEventListener("mouseenter",()=>{
-    black[i].style.backgroundColor = "black"
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    black[i].style.backgroundColor = (bgColor)
     })}
 
 }
@@ -93,13 +139,16 @@ function makeClear(){
         clear[i].style.backgroundColor = "white"
     }
 }
-    
-clearbutt = document.getElementById('butt5')
-clearbutt.addEventListener('click',makeClear)
 
-let choice = prompt("WHat size grid would you like?")
 
-    
+
+
+
+
+
+
+
+
 </script>
 
 
